@@ -10,80 +10,137 @@
 <meta property="og:description" content="Gradays is a free semester planner for students anywhere. Add your courses once, and it keeps your deadlines, grades and study plan on track all term.">
 <meta property="og:url" content="https://kobsdoings.github.io/gradays/">
 <meta name="twitter:card" content="summary">
-<meta name="theme-color" content="#f6efe3">
-<link rel="icon" href="data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 32 32'%3E%3Ccircle cx='16' cy='16' r='14' fill='%23f6efe3' stroke='%232b2a26' stroke-width='2'/%3E%3Cpath d='M9 17l5 5 9-12' fill='none' stroke='%23b4532a' stroke-width='3' stroke-linecap='round' stroke-linejoin='round'/%3E%3C/svg%3E">
+<meta name="theme-color" content="#fbf8f1">
+<link rel="icon" href="data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 32 32'%3E%3Cpath d='M6 17c3 2 5 6 7 8 4-8 8-14 14-19' fill='none' stroke='%23c8102e' stroke-width='3.5' stroke-linecap='round' stroke-linejoin='round'/%3E%3C/svg%3E">
 <link rel="preconnect" href="https://fonts.googleapis.com">
 <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
-<link href="https://fonts.googleapis.com/css2?family=Fraunces:opsz,wght@9..144,500;9..144,700&family=Atkinson+Hyperlegible:wght@400;700&display=swap" rel="stylesheet">
+<link href="https://fonts.googleapis.com/css2?family=Instrument+Serif:ital@0;1&family=Source+Sans+3:wght@400;600;700&family=Caveat:wght@500;700&display=swap" rel="stylesheet">
 <style>
-:root{--paper:#f6efe3;--ink:#2b2a26;--muted:#5a554b;--rust:#a34a24;--line:#d9ccb6;--card:#fffaf1}
+:root{--paper:#fbf8f1;--ink:#1d2433;--soft:#4a5160;--red:#c8102e;--rule:#cfdcea;--margin:#e7a3a3}
 *{box-sizing:border-box}
-body{margin:0;background:var(--paper);color:var(--ink);font:1.0625rem/1.6 "Atkinson Hyperlegible",system-ui,sans-serif}
-.wrap{max-width:44rem;margin:0 auto;padding:2rem 1.25rem 3rem}
-.brand{font-family:Fraunces,Georgia,serif;font-weight:700;font-size:1.4rem;letter-spacing:.01em}
-.brand span{color:var(--rust)}
-h1{font-family:Fraunces,Georgia,serif;font-weight:700;font-size:clamp(2.2rem,8vw,3.4rem);line-height:1.08;margin:2.5rem 0 1rem}
-h2{font-family:Fraunces,Georgia,serif;font-weight:500;font-size:1.6rem;margin:2.75rem 0 1rem}
-.sub{font-size:1.2rem;color:var(--muted);margin:0 0 1.5rem}
-.value{border-left:3px solid var(--rust);padding:.25rem 0 .25rem 1rem;margin:2rem 0}
-ul.features{list-style:none;padding:0;margin:0;border-top:1px dashed var(--line)}
-ul.features li{padding:1rem 0 1rem 2rem;border-bottom:1px dashed var(--line);position:relative}
-ul.features li::before{content:"✓";position:absolute;left:.25rem;top:1rem;color:var(--rust);font-weight:700}
-ul.features strong{font-family:Fraunces,Georgia,serif;font-weight:700}
-.join{background:var(--card);border:1.5px solid var(--ink);border-radius:6px;padding:1.5rem;margin-top:2.75rem;box-shadow:5px 5px 0 var(--line)}
-.join p{margin-top:0;font-weight:700}
-label{display:block;font-weight:700;margin:1rem 0 .35rem}
-input,select{width:100%;font:inherit;padding:.7rem .8rem;border:1.5px solid var(--ink);border-radius:4px;background:#fff;color:var(--ink)}
-button{margin-top:1.25rem;font:inherit;font-weight:700;background:var(--rust);color:#fff;border:1.5px solid var(--ink);border-radius:4px;padding:.8rem 1.4rem;cursor:pointer;width:100%}
-button:hover{background:#8a3c1b}
-:focus-visible{outline:3px solid #1f5fa8;outline-offset:2px}
-.thanks{display:none;background:#e7f0e2;border:1.5px solid #3d6b35;border-radius:6px;padding:1rem;margin-top:1.5rem}
+html{scroll-behavior:smooth}
+body{margin:0;color:var(--ink);font:1.0625rem/1.65 "Source Sans 3",system-ui,sans-serif;
+ background-color:var(--paper);
+ background-image:linear-gradient(to right,transparent 2.6rem,var(--margin) 2.6rem,var(--margin) calc(2.6rem + 1px),transparent calc(2.6rem + 1px)),repeating-linear-gradient(to bottom,transparent 0 calc(1.75rem - 1px),var(--rule) calc(1.75rem - 1px) 1.75rem);
+ background-attachment:local}
+.page{max-width:68rem;padding:1.75rem 1.25rem 3rem 3.6rem;position:relative}
+.hand{font-family:Caveat,cursive;font-weight:600;color:var(--red);line-height:1.15}
+.top{display:flex;align-items:baseline;gap:1rem;flex-wrap:wrap}
+.word{font-family:"Instrument Serif",Georgia,serif;font-size:2rem;letter-spacing:-.01em}
+.word i{color:var(--red)}
+.top .hand{font-size:1.25rem;transform:rotate(-2deg)}
+h1{font-family:"Instrument Serif",Georgia,serif;font-weight:400;font-size:clamp(2.9rem,11vw,5.6rem);line-height:.98;letter-spacing:-.02em;margin:2.25rem 0 2rem;max-width:12ch}
+h1 .hit{position:relative;white-space:nowrap;font-style:italic}
+h1 .hit>svg{position:absolute;left:-2%;bottom:-.22em;width:104%;height:.35em;overflow:visible}
+.gpa{position:relative;display:inline-block}
+h1 .gpa>svg{position:absolute;left:-14%;top:-6%;width:124%;height:118%;overflow:visible}
+.sub{font-size:1.2rem;max-width:34rem;margin:0 0 2rem}
+.grid{display:grid;gap:2.5rem}
+.value{max-width:34rem;font-size:1.08rem;color:var(--soft)}
+.value strong{color:var(--ink);background:#ffe58a;padding:0 .15em;box-decoration-break:clone;-webkit-box-decoration-break:clone}
+/* grade slip */
+.slip{background:#fff;border:1px solid #c9c2b2;padding:1.1rem 1.2rem 1.3rem;max-width:22rem;transform:rotate(1.4deg);position:relative;font-size:.98rem}
+.slip::before{content:"";position:absolute;top:-12px;left:38%;width:84px;height:24px;background:rgba(230,215,170,.75);transform:rotate(-3deg)}
+.slip h3{font-family:"Instrument Serif",serif;font-weight:400;font-size:1.35rem;margin:0 0 .5rem;border-bottom:1.5px solid var(--ink)}
+.slip table{width:100%;border-collapse:collapse;font-variant-numeric:tabular-nums}
+.slip td{padding:.3rem 0;border-bottom:1px dotted #bbb}
+.slip td:last-child{text-align:right}
+.slip .x{text-decoration:line-through;text-decoration-color:var(--red);text-decoration-thickness:2px;color:var(--soft)}
+.slip .note{font-size:1.25rem;margin:.6rem 0 0}
+h2{font-family:"Instrument Serif",Georgia,serif;font-weight:400;font-size:2.1rem;margin:3rem 0 .5rem}
+ol.notes{list-style:none;counter-reset:n;padding:0;margin:0;max-width:40rem}
+ol.notes li{counter-increment:n;position:relative;padding:.85rem 0 .85rem 2.6rem}
+ol.notes li::before{content:counter(n)".";position:absolute;left:0;top:.55rem;font-family:Caveat,cursive;font-weight:700;font-size:1.75rem;color:var(--red)}
+ol.notes li svg{position:absolute;left:-2.9rem;top:.9rem;width:1.6rem;height:1.4rem}
+ol.notes strong{font-weight:700}
+ol.notes li:nth-child(even){margin-left:1.2rem}
+.join{margin-top:3.5rem;max-width:30rem;position:relative;border:2px solid var(--ink);border-radius:2px 14px 3px 10px/12px 3px 14px 2px;padding:1.5rem 1.4rem;background:var(--paper)}
+.join .cta{font-family:"Instrument Serif",serif;font-size:1.7rem;line-height:1.15;margin:0 0 1rem}
+.arrow{display:none}
+label{display:block;font-weight:700;margin:1rem 0 .3rem}
+label .hand{font-size:1.15rem;font-weight:500;margin-left:.3rem}
+input,select{width:100%;font:inherit;padding:.65rem .75rem;border:0;border-bottom:2px solid var(--ink);background:rgba(255,255,255,.7);color:var(--ink);border-radius:0}
+button{margin-top:1.4rem;font:inherit;font-weight:700;font-size:1.1rem;background:var(--red);color:#fff;border:2px solid var(--ink);padding:.75rem 1.5rem;cursor:pointer;border-radius:3px 8px 4px 9px;transition:transform .12s}
+button:hover{transform:rotate(-1deg) translateY(-1px)}
+:focus-visible{outline:3px solid #1d4ed8;outline-offset:3px}
+.thanks{display:none;max-width:30rem;border:2px dashed var(--red);padding:.9rem 1rem;margin:0 0 2rem;background:#fff}
+.thanks .hand{font-size:1.6rem}
 .joined .thanks{display:block}
-.hint{font-size:.9rem;color:var(--muted)}
-footer{margin-top:3rem;padding-top:1.25rem;border-top:1px solid var(--line);font-size:.95rem;color:var(--muted)}
-@media(min-width:40rem){button{width:auto}.wrap{padding-top:3rem}}
+footer{margin-top:3.5rem;font-size:.95rem;color:var(--soft)}
+footer p{margin:.2rem 0}
+@media(min-width:56rem){
+ .page{padding:3rem 3rem 4rem 7rem}
+ body{background-image:linear-gradient(to right,transparent 5rem,var(--margin) 5rem,var(--margin) calc(5rem + 1px),transparent calc(5rem + 1px)),repeating-linear-gradient(to bottom,transparent 0 calc(1.75rem - 1px),var(--rule) calc(1.75rem - 1px) 1.75rem)}
+ .grid{grid-template-columns:minmax(0,1.35fr) minmax(0,1fr);align-items:start}
+ .slip{margin-top:-6rem}
+ .lower{display:grid;grid-template-columns:minmax(0,1.2fr) minmax(0,1fr);gap:3rem;align-items:start}
+ .join{margin-top:6.5rem}
+ .arrow{display:block;position:absolute;left:-7.5rem;top:-4.5rem;width:9rem}
+ .arrow .hand{font-size:1.35rem;display:block;transform:rotate(-6deg);margin-left:-1rem}
+}
+@media(prefers-reduced-motion:reduce){*{transition:none!important;scroll-behavior:auto!important}}
 </style>
 </head>
 <body>
-<main class="wrap">
-<div class="brand">Grad<span>ays</span></div>
-<h1>Plan your semester. Hit your GPA.</h1>
+<div class="page">
+<header class="top"><span class="word">Grad<i>ays</i></span><span class="hand" aria-hidden="true">← coming soon, promise</span></header>
+<main>
+<div class="thanks" role="status"><span class="hand">You're on the list!</span><br>Nice one. We'll email you the day Gradays opens, and that's it.</div>
+<h1>Plan your semester. <span class="hit">Hit your <span class="gpa">GPA.<svg viewBox="0 0 120 70" preserveAspectRatio="none" aria-hidden="true"><path d="M60 6C28 4 6 18 7 36s30 30 58 28 50-14 48-32S88 3 52 8" fill="none" stroke="#c8102e" stroke-width="3" stroke-linecap="round"/></svg></span><svg viewBox="0 0 300 20" preserveAspectRatio="none" aria-hidden="true"><path d="M3 12c50-7 110-9 170-6s90 4 124-2M20 17c70-5 150-6 240-3" fill="none" stroke="#c8102e" stroke-width="3.2" stroke-linecap="round"/></svg></span></h1>
+<div class="grid">
+<div>
 <p class="sub">Gradays is a free semester planner for students anywhere. Add your courses once, and it keeps your deadlines, grades and study plan on track all term.</p>
-<div class="thanks" role="status" id="thanks"><strong>Thank you, you're on the list!</strong> We'll email you when Gradays launches.</div>
-<p class="value">Most planners only track tasks. Gradays understands your grades. Tell it your grading system and the result you're aiming for. It shows exactly what you need on each assessment, warns you early when you're slipping, and keeps everything you study from in one place.</p>
-<h2>What you get</h2>
-<ul class="features">
-<li><strong>Semester at a glance:</strong> your timetable, assessments and deadlines in one place, with a Today view that tells you what matters next.</li>
-<li><strong>Works with your grading system:</strong> GPA, percentages, letter grades, UK classes, CWA and more, and it shows the working behind every result.</li>
-<li><strong>Goal tracker:</strong> set your target GPA or grade, and see what you need on each remaining assessment and whether you're on pace.</li>
-<li><strong>Your study resources:</strong> keep your notes, past questions and YouTube lessons next to each course, and watch videos right inside Gradays.</li>
-<li><strong>Free and private:</strong> the core is free forever, and your data stays yours.</li>
-</ul>
+<p class="value">Most planners only track tasks. <strong>Gradays understands your grades.</strong> Tell it your grading system and the result you're aiming for. It shows exactly what you need on each assessment, warns you early when you're slipping, and keeps everything you study from in one place.</p>
+</div>
+<aside class="slip" aria-label="Example: a marked-up grade slip">
+<h3>Semester 1 · grade slip</h3>
+<table>
+<tr><td>Calculus II, midterm</td><td>68</td></tr>
+<tr><td>Calculus II, final</td><td><span class="hand" style="font-size:1.3rem">need 74</span></td></tr>
+<tr><td>Intro Economics</td><td>B+</td></tr>
+<tr><td>Lab report 3</td><td><span class="x">Fri</span> <span class="hand" style="font-size:1.2rem">Mon!</span></td></tr>
+<tr><td><strong>Target GPA</strong></td><td><strong>3.6</strong></td></tr>
+</table>
+<p class="note hand">on pace, just don't skip the lab ✓</p>
+</aside>
+</div>
+<div class="lower">
+<section aria-labelledby="what">
+<h2 id="what">What it does</h2>
+<ol class="notes">
+<li><svg viewBox="0 0 26 22" aria-hidden="true"><path d="M2 12c3 2 5 5 7 8C13 12 18 6 24 2" fill="none" stroke="#c8102e" stroke-width="2.6" stroke-linecap="round"/></svg><strong>Semester at a glance:</strong> your timetable, assessments and deadlines in one place, with a Today view that tells you what matters next.</li>
+<li><svg viewBox="0 0 26 22" aria-hidden="true"><path d="M3 11c2 3 4 6 6 9C12 13 17 6 23 3" fill="none" stroke="#c8102e" stroke-width="2.6" stroke-linecap="round"/></svg><strong>Works with your grading system:</strong> GPA, percentages, letter grades, UK classes, CWA and more, and it shows the working behind every result.</li>
+<li><svg viewBox="0 0 26 22" aria-hidden="true"><path d="M2 13c3 1 5 4 7 7C14 11 18 7 24 3" fill="none" stroke="#c8102e" stroke-width="2.6" stroke-linecap="round"/></svg><strong>Goal tracker:</strong> set your target GPA or grade, and see what you need on each remaining assessment and whether you're on pace.</li>
+<li><svg viewBox="0 0 26 22" aria-hidden="true"><path d="M3 12c2 2 4 5 6 8C13 12 17 7 23 2" fill="none" stroke="#c8102e" stroke-width="2.6" stroke-linecap="round"/></svg><strong>Your study resources:</strong> keep your notes, past questions and YouTube lessons next to each course, and watch videos right inside Gradays.</li>
+<li><svg viewBox="0 0 26 22" aria-hidden="true"><path d="M2 11c3 3 5 6 7 9C13 12 18 5 24 3" fill="none" stroke="#c8102e" stroke-width="2.6" stroke-linecap="round"/></svg><strong>Free and private:</strong> the core is free forever, and your data stays yours.</li>
+</ol>
+</section>
 <section class="join" id="join" aria-labelledby="cta">
-<p id="cta">Join the waitlist and be first to plan your semester with Gradays.</p>
+<div class="arrow" aria-hidden="true"><span class="hand">this bit's important</span><svg viewBox="0 0 140 90"><path d="M8 10c30 0 70 10 92 38s22 30 28 34M128 82l-14-3M128 82l-3-14" fill="none" stroke="#c8102e" stroke-width="2.6" stroke-linecap="round"/></svg></div>
+<p class="cta" id="cta">Join the waitlist and be first to plan your semester with Gradays.</p>
 <form action="https://formsubmit.co/pakplome78@gmail.com" method="POST">
 <input type="hidden" name="_subject" value="Gradays waitlist signup">
 <input type="hidden" name="_captcha" value="true">
 <input type="hidden" name="_template" value="table">
 <input type="hidden" name="_next" value="https://kobsdoings.github.io/gradays/?joined=1">
 <input type="text" name="_honey" style="display:none" tabindex="-1" autocomplete="off" aria-hidden="true">
-<label for="email">Email address</label>
-<input id="email" type="email" name="email" required autocomplete="email" placeholder="you@example.com">
-<label for="country">Country <span class="hint">(optional)</span></label>
+<label for="email">Email address <span class="hand">(no spam, honest)</span></label>
+<input id="email" type="email" name="email" required autocomplete="email" placeholder="you@school.edu">
+<label for="country">Country <span class="hand">(optional)</span></label>
 <select id="country" name="country">
-<option value="">Choose your country</option>
+<option value="">Pick one, or skip it</option>
 <option>Ghana</option><option>Nigeria</option><option>Kenya</option><option>South Africa</option><option>United Kingdom</option><option>United States</option><option>Canada</option><option>India</option><option>Germany</option><option>France</option><option>Australia</option><option>Other</option>
 </select>
 <button type="submit">Join the waitlist</button>
 </form>
 </section>
+</div>
+</main>
 <footer>
 <p>© 2026 Gradays</p>
 <p>We only use your email to tell you when Gradays launches.</p>
 </footer>
-</main>
-<script>
-if(new URLSearchParams(location.search).get('joined')==='1'){document.body.classList.add('joined');document.getElementById('thanks').focus&&document.getElementById('thanks').scrollIntoView();}
-</script>
+</div>
+<script>if(new URLSearchParams(location.search).get('joined')==='1')document.body.classList.add('joined');</script>
 </body>
 </html>
