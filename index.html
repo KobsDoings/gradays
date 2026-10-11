@@ -91,6 +91,9 @@ button:focus-visible{outline:3px solid var(--acc);outline-offset:3px}
 .end a:focus-visible{outline:3px solid var(--acc);outline-offset:3px}
 footer{display:flex;flex-wrap:wrap;justify-content:space-between;gap:var(--s3);padding:var(--s5) 0 var(--s7);border-top:1px solid var(--line);font-size:.85rem;color:var(--soft)}
 footer p{margin:0}
+footer a,.fine a{color:inherit;text-underline-offset:3px}
+footer a:hover,.fine a:hover{color:var(--acc-d)}
+footer a:focus-visible,.fine a:focus-visible{outline:3px solid var(--acc);outline-offset:2px}
 @media(min-width:60rem){
  body{background-image:linear-gradient(to right,transparent 3rem,rgba(214,120,130,.55) 3rem,rgba(214,120,130,.55) calc(3rem + 1px),transparent calc(3rem + 1px)),repeating-linear-gradient(to bottom,transparent 0 calc(1.75rem - 1px),rgba(120,150,185,.22) calc(1.75rem - 1px) 1.75rem)}
  .wrap{padding:0 var(--s7)}
@@ -110,7 +113,7 @@ footer p{margin:0}
 <section class="hero" aria-labelledby="h">
 <div>
 <p class="eyebrow mono">A semester planner that does the maths</p>
-<div class="thanks" role="status"><strong>You're on the list.</strong> We'll email you the day Gradays opens, and nothing else.</div>
+<div class="thanks" role="status"><strong>You're on the list.</strong> We'll email you when Gradays opens. Anything else, we'll ask first.</div>
 <h1 id="h">Plan your semester.<br> <em>Hit your GPA.</em></h1>
 <p class="sub">Gradays is a semester planner for students anywhere, free to start. Add your courses once, and it keeps your deadlines, grades and study plan on track all term.</p>
 <p class="cta" id="cta">Join the waitlist and be first to plan your semester with Gradays.</p>
@@ -126,7 +129,7 @@ footer p{margin:0}
 <select id="country" name="country"><option value="">Choose…</option><option>Ghana</option><option>Nigeria</option><option>Kenya</option><option>South Africa</option><option>United Kingdom</option><option>United States</option><option>Canada</option><option>India</option><option>Germany</option><option>France</option><option>Australia</option><option>Other</option></select></div>
 </div>
 <button type="submit">Join the waitlist <svg viewBox="0 0 16 16" aria-hidden="true"><path d="M3 8h9M8.5 4l4 4-4 4" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round"/></svg></button>
-<p class="fine">One email when we launch. No spam, ever.</p>
+<p class="fine">No spam, just the launch email. By joining, you agree to our <a href="privacy.html">privacy policy</a>.</p>
 </form>
 </div>
 <div class="stage" role="img" aria-label="Preview of the Gradays goal tracker: target GPA 3.60, projected 3.64, on pace, with the marks needed on each remaining assessment.">
@@ -159,7 +162,7 @@ footer p{margin:0}
 </section>
 <div class="end"><p>Join the waitlist and be first to plan your semester with Gradays.</p><a href="#email">Join the waitlist ↑</a></div>
 </main>
-<footer><p>© 2026 Gradays</p><p>We only use your email to tell you when Gradays launches.</p></footer>
+<footer><p>© 2026 Gradays, run by KobsDoings · Contact: <a href="mailto:pakplome78@gmail.com">pakplome78@gmail.com</a> · <a href="privacy.html">Privacy policy</a></p><p>We use your email to tell you when Gradays launches. Anything else, we'll ask first.</p></footer>
 </div>
 <script>if(new URLSearchParams(location.search).get('joined')==='1')document.body.classList.add('joined');</script>
 </body>
